@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Course Scheduler</title>
+    \<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-header">
+    <h1>Course Path Logic</h1>
+    <p style="color: var(--text-dim)">Visualizing Topological Sorting for Smart Academic Planning</p>
+</div>
+
+<div class="container">
+    <div class="card">
+        <div class="input-group">
+            <label>Course Name</label>
+            <input type="text" id="courseName" placeholder="e.g. DATA_STRUCT">
+        </div>
+        <div class="input-group">
+            <label>Prerequisite</label>
+            <select id="prereqSelect"></select>
+        </div>
+        <button class="btn btn-primary" onclick="addCourse()">Add Course</button>
+        <button class="btn btn-outline" onclick="clearAll()">Clear All</button>
+        
+        <div id="courseList" style="margin-top: 20px;">
+            <label>Current Courses:</label>
+            </div>
+    </div>
+
+    <div>
+        <div id="errorBox" class="error-toast">⚠️ Circular Dependency Detected! Check your prerequisites.</div>
+        <div class="card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 style="margin: 0;">Planned Timeline</h2>
+                <button class="btn btn-primary" style="width: auto; padding: 8px 20px;" onclick="calculateSchedule()">Generate Schedule</button>
+            </div>
+            <div id="output" class="semester-grid">
+                </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js">  
+</script>
+</body>
+</html>
